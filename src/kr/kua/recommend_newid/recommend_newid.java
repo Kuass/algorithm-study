@@ -38,10 +38,7 @@ public class recommend_newid {
         String str = sb.toString().replaceAll("\\p{Z}", "a"); // Step 5
         if (str.length() >= 16) str = str.substring(0, 15); // Step 6
         if (str.charAt(str.length() - 1) == 0x2E) str = str.substring(0, str.length() - 1);
-        while(str.length() <= 2) {
-            Character temp = str.charAt(str.length() - 1);
-            str = str + temp;
-        }
+        while(str.length() <= 2) str = str + str.charAt(str.length() - 1); // Step 7
 
         return str;
     }
