@@ -1,7 +1,4 @@
-package kr.kua.recommend_newid;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package kr.kua.programmers.recommend_newid;
 
 public class recommend_newid {
     public recommend_newid() {

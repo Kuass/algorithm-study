@@ -1,4 +1,4 @@
-package kr.kua.an_unfinished_runner;
+package kr.kua.programmers.an_unfinished_runner;
 
 import java.util.Arrays;
 
