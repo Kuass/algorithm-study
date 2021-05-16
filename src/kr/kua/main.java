@@ -1,6 +1,6 @@
 package kr.kua;
 
-import kr.kua.programmers.recommend_newid.recommend_newid;
+import kr.kua.programmers.recommend_newid;
 
 public class main {
     public static void main(String[] args) {

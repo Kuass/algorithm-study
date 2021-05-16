@@ -1,4 +1,4 @@
-package kr.kua.programmers.recommend_newid;
+package kr.kua.programmers;
 
 public class recommend_newid {
     public recommend_newid() {
