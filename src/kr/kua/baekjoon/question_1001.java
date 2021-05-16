@@ -1,6 +1,5 @@
-package kr.kua.baekjoon.question_1001;
+package kr.kua.baekjoon;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class question_1001 {
