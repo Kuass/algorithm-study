@@ -1,6 +1,6 @@
 package kr.kua.programmers;
 
-public class recommend_newid {
+public class recommend_newid { // 신규 아이디 추천
     public recommend_newid() {
         String result = solution("...!@BaT#*..y.ab- cdef._^&ghij009klm.");
         System.out.println("result : " + result);

@@ -1,9 +1,9 @@
 package kr.kua;
 
-import kr.kua.programmers.recommend_newid;
+import kr.kua.programmers.remove_pairs;
 
 public class main {
     public static void main(String[] args) {
-        recommend_newid rni = new recommend_newid();
+        remove_pairs rni = new remove_pairs();
     }
 }
