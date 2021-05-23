@@ -18,4 +18,3 @@ public class question_16561 {
         System.out.println(sum);
     }
 }
-
