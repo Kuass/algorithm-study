@@ -11,7 +11,7 @@ public class question_10996 { // 별 찍기 - 21
             for (int t = 0; t < a; t++)
                 if ((i + t) % 2 == 0) System.out.printf("*");
                 else System.out.printf(" ");
-            System.out.println();
+            System.out.printf("\n");
         }
     }
 }
