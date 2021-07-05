@@ -1,4 +1,4 @@
-package baekjoon
+package kr.kua.baekjoon
 
 import java.util.*
 
