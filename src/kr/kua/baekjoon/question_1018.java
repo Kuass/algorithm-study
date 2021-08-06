@@ -1,72 +1,51 @@
 package kr.kua.baekjoon;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class question_1018 {
-    static int row, column;
-    static char[][] Total_ArrChar;
+    static int[][] board;
+    static int result = Integer.MAX_VALUE;
 
-    public static void main(String[] args) {
-        var sc = new Scanner(System.in);
-        String[] str = sc.nextLine().split(" ");
-        row = Integer.parseInt(str[0]);
-        column = Integer.parseInt(str[1]);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Total_ArrChar = new char[row][column];
-        for (var i = 0; i < row; i++) {
-            char[] chs = sc.nextLine().toCharArray();
-            System.arraycopy(chs, 0, Total_ArrChar[i], 0, column);
-        }
-        sc.close();
+        var NM = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        board = new int[NM[0]][NM[1]];
 
-        char[][][] Cur_ArrChar = new char[row * column / 2][8][8];
-        int x = 0, y = 0, count = 0;
-        while (true) {
-            if (x + 7 == column) {
-                x = 0;
-                y++;
-                if (y + 7 == row) {
-                    break;
-                }
+        for (int i = 0; i < NM[0]; i++) {
+            var str = br.readLine();
+            for (int j = 0; j < NM[1]; j++) {
+                if (str.charAt(j) == 'W') board[i][j] = 1;
+                else board[i][j] = 0;
             }
-            for (int i = y, n = 0; i < y + 8; i++, n++) {
-                for (int j = x, t = 0; j < x + 8; j++, t++) {
-                    Cur_ArrChar[count][n][t] = Total_ArrChar[i][j];
-                }
-            }
-            x++;
-            count++;
         }
 
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        while (count != 0) {
-            int wrong_place = 0;
-            boolean isWhite = Cur_ArrChar[count - 1][0][0] == 'W';
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 8; j++) {
-                    char chr = Cur_ArrChar[count - 1][i][j];
-                    if (((i % 2) + j) % 2 == 1) {
-                        if (isWhite && chr == 'W') {
-                            wrong_place++;
-                        } else if (!isWhite && chr == 'B') {
-                            wrong_place++;
-                        }
-                    } else if (((i % 2) + j) % 2 == 0) {
-                        if (isWhite && chr == 'B') {
-                            wrong_place++;
-                        } else if (!isWhite && chr == 'W') {
-                            wrong_place++;
-                        }
-                    }
-                }
+        for (int i = 0; i < NM[0] - 7; i++)
+            for (int j = 0; j < NM[1] - 7; j++) search(i, j);
+
+        System.out.println(result);
+    }
+
+    static void search(int x, int y) {
+        var color = board[x][y];
+        var count = 0;
+
+        for (int i = x; i < x + 8; i++) {
+            for (int j = y; j < y + 8; j++) {
+                if (board[i][j] != color) count++;
+
+                if (color == 0) color = 1;
+                else if (color == 1) color = 0;
             }
-            arrayList.add(wrong_place);
-            count--;
+            if (color == 0) color = 1;
+            else if (color == 1) color = 0;
         }
 
-        System.out.println(Collections.min(arrayList));
+        count = Math.min(count, 64 - count);
+        result = Math.min(result, count);
     }
 }
 
