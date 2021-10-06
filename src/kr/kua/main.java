@@ -1,10 +1,9 @@
 package kr.kua;
 
-import kr.kua.programmers.question_42888;
+import kr.kua.programmers.question_77484;
 
 public class main {
     public static void main(String[] args) {
-        question_42888 rni = new question_42888();
-        rni.question_42888();
+        question_77484 rni = new question_77484();
     }
 }
