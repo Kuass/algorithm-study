@@ -1,6 +1,6 @@
 package kr.kua.inflearn._푸샵맨.graph;
 
-public class numberOfIsland {
+public class numberOfIsland_dfs {
     public static void main(String args[]) {
         char[][] grid = {
                 { '1', '1', '0', '0', '0' },
