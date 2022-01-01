@@ -6,5 +6,4 @@ fun main() = with(System.`in`.bufferedReader()) { // 농구 경기
     repeat(readLine().toInt()) { arr[readLine()[0].code - 0x61]++ }
     arr.forEachIndexed { index, i -> if (i >= 5) sb.append((index + 0x61).toChar()) }
     print(if (sb.toString().isEmpty()) "PREDAJA" else sb)
-
 }
