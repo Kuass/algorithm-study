@@ -8,10 +8,7 @@ fun main() = with(System.`in`.bufferedReader()) { // 패션왕 신해빈
         val map = HashMap<String, Int>()
 
         repeat (readLine().toInt()) {
-            val st = StringTokenizer(readLine(), " ");
-            st.nextToken()
-
-            val kind = st.nextToken()
+            val kind = readLine().split(' ')[1]
             map[kind] = if (map.containsKey(kind)) map[kind]!! + 1 else 1
         }
 
