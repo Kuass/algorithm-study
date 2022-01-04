@@ -6,6 +6,8 @@ fun main() = with(System.`in`.bufferedReader()) { // 수학숙제
     val list = mutableListOf<BigInteger>()
     repeat(readLine().toInt()) {
         val str = readLine()
+        // readLine().split(Regex("[^0-9]+"))
+        // split 에 정규식을 넣을 수 있었다..!
 
         var startIndex = 0
         var startDigit = false
